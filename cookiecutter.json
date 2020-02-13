@@ -1,0 +1,9 @@
+{
+    "project_name": "project_name",
+    "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
+    "base_image": "fastai-jupyter",
+    "output_image": "fastai-jupyter",
+    "target_processor": ["cpu", "gpu"],
+    "requirements": [],
+    "install_jupyter": ["no", "yes"]
+}

@@ -1,0 +1,9 @@
+autopep8
+{%- for dependency in cookiecutter.requirements %}
+    {{dependency}}
+{%- endfor -%}
+{%- if cookiecutter.install_jupyter == "yes" %}
+    jupyter
+    notebook
+    ipywidgets
+{%- endif -%}
