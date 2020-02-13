@@ -7,6 +7,13 @@ RUN pip install -r /dev/requirements.txt
 # Install unzip
 RUN apt-get install -y unzip
 
+{%- if cookiecutter.install_jupyter == "yes" %}
+# Install Jupyter + extensions
+RUN pip install jupyter notebook ipywidgets
+RUN pip install jupyter_contrib_nbextensions
+RUN jupyter contrib nbextension install --user
+{%- endif -%}
+
 # Copy over the custom CSS file
 COPY custom.css /root/.ipython/profile_default/static/custom/custom.css
 

@@ -6,6 +6,7 @@ if [[ ! -d $BASE_DIR ]]
 then
     SCRIPT_DIR=$(dirname "$(realpath $0)")
     echo < $SCRIPT_DIR/usage.txt
+fi
 
 echo "Mounting base directory $BASE_DIR into the container..."
 

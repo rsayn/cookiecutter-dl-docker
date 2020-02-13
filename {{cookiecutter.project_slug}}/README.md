@@ -34,7 +34,6 @@ The container will start a new Jupyter Notebook server on port 8888.
 
 Note that the {{cookiecutter.project_slug}} folder will be mounted inside the container, so any change you make to the source files or notebooks will be replicated on both systems.
 
-
 ## Project Structure
 
 ```text
