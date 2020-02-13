@@ -1,45 +1,31 @@
-# {{cookiecutter.project_name}}
+# Deep Learning with Docker
 
-## Get Started
+A boilerplate used to scaffold projects running on Nvidia-Docker (or even traditional Docker) with both source code and Jupyter notebooks.
 
-### Prerequisites
+## Getting started
 
-To run this project you need to install Docker or Nvidia-Docker.
-
-### Build the image
-
-An utility script can be found in `bin/build.sh`:
+To create a new project from this template, install `cookiecutter`:
 
 ```bash
-./bin/build.sh
+pip install cookiecutter
 ```
 
-### Run the image
-
-If you want to use Docker (on CPU):
+Then add the following to your `.bashrc` file:
 
 ```bash
-./bin/run-cpu.sh
+EXPORT PATH=$HOME/.local/bin:$PATH
 ```
 
-If you want to run the container using Nvidia-Docker:
+Then you can run cookiecutter as follows:
 
 ```bash
-./bin/run-cuda.sh
+cookiecutter gh:rsayn/cookiecutter-dl-docker -o <target-folder>
 ```
 
-Note: if you plan on using Nvidia-Docker, you should use one of the images available on the Nvidia Container Repository.
+Cookiecutter will prompt you for some configuration values, e.g. the project name, package requirements and whether to use CPU or GPU to run the container.
 
-The container will start a new Jupyter Notebook server on port 8888.
+Note: requirements should be provided in a comma-separated form as follows:
 
-Note that the {{cookiecutter.project_slug}} folder will be mounted inside the container, so any change you make to the source files or notebooks will be replicated on both systems.
-
-
-## Project Structure
-
-```text
-{{cookiecutter.project_slug}}/
-    nbs/
-    src/
-bin/
+```bash
+sklearn,pipenv,numpy,pandas
 ```

@@ -1,5 +1,5 @@
 autopep8
-{%- for dependency in cookiecutter.requirements %}
+{%- for dependency in cookiecutter.requirements.split(",") %}
     {{dependency}}
 {%- endfor -%}
 {%- if cookiecutter.install_jupyter == "yes" %}
