@@ -13,4 +13,4 @@ echo "Mounting base directory $BASE_DIR into the container..."
 docker run \
     -p 8888:8888 \
     --mount type=bind,source="$BASE_DIR",target=/dev/{{cookiecutter.project_slug}} \
-    {{cookiecutter.output_image_name}}
+    {{cookiecutter.output_image}}

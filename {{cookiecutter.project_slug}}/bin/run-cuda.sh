@@ -15,4 +15,4 @@ docker run \
     --gpus all \
     -p 8888:8888 \
     --mount type=bind,source="$BASE_DIR",target=/dev/{{cookiecutter.project_slug}} \
-    {{cookiecutter.output_image_name}}
+    {{cookiecutter.output_image}}
