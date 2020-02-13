@@ -12,6 +12,10 @@ echo "Mounting base directory $BASE_DIR into the container..."
 
 # Run the container, exposing the port
 docker run \
+    {% if cookiecutter.target_processor == "gpu" %}
+    --ipc=host \
+    --gpus all \
+    {% endif %}
     -p 8888:8888 \
     --mount type=bind,source="$BASE_DIR",target=/proj/{{cookiecutter.project_slug}} \
     {{cookiecutter.output_image}}

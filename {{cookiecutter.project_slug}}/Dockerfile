@@ -9,12 +9,16 @@ RUN pip install -r requirements.txt
 # Install unzip
 RUN apt-get install -y unzip
 
-{%- if cookiecutter.install_jupyter == "yes" %}
-# Install Jupyter + extensions
+{% if cookiecutter.install_jupyter == "yes" %}
+# Install Jupyter
 RUN pip install jupyter notebook ipywidgets
+{%- endif %}
+
+{% if cookiecutter.install_jupyter_extensions == "yes" %}
+# Install JUpyter extensions
 RUN pip install jupyter_contrib_nbextensions
 RUN jupyter contrib nbextension install --user
-{%- endif -%}
+{%- endif %}
 
 # Copy over the custom CSS file
 COPY custom.css /root/.ipython/profile_default/static/custom/custom.css
