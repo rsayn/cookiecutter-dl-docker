@@ -1,8 +1,10 @@
 FROM {{cookiecutter.base_image}}
 
 # Copy over & install requirements
-COPY requirements.txt /dev/requirements.txt
-RUN pip install -r /dev/requirements.txt
+RUN mkdir -p /proj
+COPY requirements.txt /proj/requirements.txt
+WORKDIR /proj
+RUN pip install -r requirements.txt
 
 # Install unzip
 RUN apt-get install -y unzip
@@ -21,4 +23,4 @@ COPY custom.css /root/.ipython/profile_default/static/custom/custom.css
 EXPOSE 8888
 
 # Run the notebook
-CMD ["jupyter", "notebook", "--notebook-dir=/dev/{{cookiecutter.project_slug}}/nbs"]
+CMD ["jupyter", "notebook", "--notebook-dir=/proj/{{cookiecutter.project_slug}}/nbs"]

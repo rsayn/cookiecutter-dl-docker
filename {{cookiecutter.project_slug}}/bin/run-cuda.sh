@@ -15,5 +15,5 @@ docker run \
     --ipc=host \
     --gpus all \
     -p 8888:8888 \
-    --mount type=bind,source="$BASE_DIR",target=/dev/{{cookiecutter.project_slug}} \
+    --mount type=bind,source="$BASE_DIR",target=/proj/{{cookiecutter.project_slug}} \
     {{cookiecutter.output_image}}
