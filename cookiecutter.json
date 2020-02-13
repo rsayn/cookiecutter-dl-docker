@@ -4,6 +4,6 @@
     "base_image": "fastai-jupyter",
     "output_image": "fastai-jupyter",
     "target_processor": ["cpu", "gpu"],
-    "requirements": [],
+    "requirements": "",
     "install_jupyter": ["no", "yes"]
 }
