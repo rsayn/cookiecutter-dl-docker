@@ -19,7 +19,7 @@ EXPORT PATH=$HOME/.local/bin:$PATH
 Then you can run cookiecutter as follows:
 
 ```bash
-cookiecutter gh:rsayn/cookiecutter-dl-docker -o <target-folder>
+cookiecutter gh:rsayn/cookiecutter-dl-docker>
 ```
 
 Cookiecutter will prompt you for some configuration values, e.g. the project name, package requirements and whether to use CPU or GPU to run the container.
