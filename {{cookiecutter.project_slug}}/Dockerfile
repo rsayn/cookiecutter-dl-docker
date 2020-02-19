@@ -11,7 +11,7 @@ RUN apt-get install -y unzip
 
 {% if cookiecutter.install_jupyter == "yes" %}
 # Install Jupyter
-RUN pip install jupyter notebook ipywidgets
+RUN pip install jupyter notebook==5.7.8 ipywidgets
 {%- endif %}
 
 {% if cookiecutter.install_jupyter_extensions == "yes" %}

@@ -1,7 +1,7 @@
 {
     "project_name": "project_name",
     "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
-    "base_image": "fastai-jupyter",
+    "base_image": "nvcr.io/nvidia/pytorch:20.01-py3",
     "output_image": "fastai-jupyter",
     "target_processor": ["gpu", "cpu"],
     "install_jupyter": ["no", "yes"],
