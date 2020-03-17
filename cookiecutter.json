@@ -2,9 +2,15 @@
     "project_name": "project_name",
     "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
     "base_image": "nvcr.io/nvidia/pytorch:20.01-py3",
-    "output_image": "fastai-jupyter",
-    "target_processor": ["gpu", "cpu"],
-    "install_jupyter": ["no", "yes"],
-    "install_jupyter_extensions": ["yes", "no"],
-    "requirements": ""
+    "output_image": "{{ cookiecutter.project_slug }}",
+    "target_processor": [
+        "gpu",
+        "cpu"
+    ],
+    "environment": [
+        "jupyterlab",
+        "jupyter"
+    ],
+    "requirements": "",
+    "ssh_password": ""
 }

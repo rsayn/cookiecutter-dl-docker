@@ -1,4 +1,5 @@
 autopep8
+pylint
 {%- for dependency in cookiecutter.requirements.split(",") %}
 {{dependency}}
 {%- endfor -%}
