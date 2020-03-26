@@ -17,7 +17,7 @@ def build_project():
         author_email='<author-email>',
         description='<project-description>',
         packages=find_packages(),
-        install_requires=[{{cookiecutter.requirements.split(",").map('quote').join(", ")}}],
+        install_requires=[{{cookiecutter.requirements.split(",")|safe}}],
         long_description=open('README.md').read(),
         zip_safe=False)
 
