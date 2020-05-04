@@ -1,6 +1,7 @@
 #!/bin/bash
 
-BASE_DIR=$(pwd)/${1:-{{cookiecutter.project_slug}}}
+SOURCE_DIR=$(pwd)/${1:-{{cookiecutter.project_slug}}}
+NBS_DIR=$(pwd)/${1:-nbs}
 
 if [[ ! -d $BASE_DIR ]]
 then
@@ -8,7 +9,7 @@ then
     echo < $SCRIPT_DIR/usage.txt
 fi
 
-echo "Mounting base directory $BASE_DIR into the container..."
+echo "Mounting directories $SOURCE_DIR and $NBS_DIR into the container..."
 
 #  Fork a process to open a new browser tab
 {%if cookiecutter.environment == "jupyterlab"-%}
@@ -27,6 +28,6 @@ docker run \
     --gpus all \
     {%- endif %}
     -p 8888:8888 -p 8787:8787 -p 8786:8786 -p 9091:22 \
-    --mount type=bind,source="$BASE_DIR",target=/proj/{{cookiecutter.project_slug}} \
+    --mount type=bind,source="$SOURCE_DIR",target=/proj/{{cookiecutter.project_slug}} \
+    --mount type=bind,source="$NBS_DIR",target=/proj/nbs \
     {{cookiecutter.output_image}}
-    &

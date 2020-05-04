@@ -7,4 +7,4 @@ pip freeze > /proj/{{cookiecutter.project_slug}}/requirements.txt
 /usr/sbin/sshd &
 
 # Start the Jupyter Notebook
-jupyter notebook --notebook-dir=/proj/{{cookiecutter.project_slug}} --ip=0.0.0.0
+jupyter notebook --notebook-dir=/proj --ip=0.0.0.0
